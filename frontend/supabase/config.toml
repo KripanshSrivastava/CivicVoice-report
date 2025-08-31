@@ -1,0 +1,7 @@
+project_id = "zfvlemjnotcbulbhioln"
+
+[functions.send-notification]
+verify_jwt = false
+
+[functions.generate-issue-summary]
+verify_jwt = false

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicVoice - Report Civic Issues in Your Community</title>
+    <meta name="description" content="Mobile-first platform for reporting and tracking civic issues. Help improve your community by reporting potholes, broken streetlights, and more." />
+    <meta name="author" content="CivicVoice" />
+    <meta name="keywords" content="civic issues, community reporting, government services, municipal services, citizen engagement" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="CivicVoice" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="CivicVoice - Report Civic Issues in Your Community" />
+    <meta property="og:description" content="Mobile-first platform for reporting and tracking civic issues. Help improve your community." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/src/assets/civic-hero.jpg" />
+    <meta property="og:url" content="https://civic-voice.app" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CivicVoice - Report Civic Issues" />
+    <meta name="twitter:description" content="Mobile-first platform for reporting and tracking civic issues." />
+    <meta name="twitter:image" content="/src/assets/civic-hero.jpg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
